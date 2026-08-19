@@ -16,7 +16,8 @@ CGW 是 Cursor 的本机网关客户端：**默认走你已登录的 Cursor 账�
 | **桌面管理工具** | [`cgw-desktop-win32-x64.exe`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-win32-x64.exe) 等 | 安装插件与本机服务、管理账号与状态 |
 
 > 其他平台请在 Release 页选择对应的 `cgw-desktop-<平台>` 文件。  
-> macOS 为 `.app.zip`，Linux / macOS Intel / Apple Silicon 文件名后缀不同。
+> **macOS** 为 `.app.zip`。  
+> **Linux** 首次安装请用系统包（会自动装 GTK3/WebKit）：Ubuntu/Debian 下载 [`cgw-desktop-linux-x64.deb`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.deb)，Fedora/RHEL 下载 [`cgw-desktop-linux-x64.rpm`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.rpm)。装好后在应用内更新即可，不必反复装包。也可以直接跑裸 ELF [`cgw-desktop-linux-x64`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64)（需本机已有 `libgtk-3-0` 与 `libwebkit2gtk-4.1-0`）。
 
 **本机服务无需手动下载** — 安装插件或打开桌面工具后会自动拉取并常驻本机，负责转发流量。
 
