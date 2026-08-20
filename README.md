@@ -1,4 +1,4 @@
-# CGW · Cursor Gateway
+# CGW · Cursor Gateway  交流群 QQ：1092395668
 
 CGW 是 Cursor 的本机网关客户端：**默认走你已登录的 Cursor 账号**，需要时可**无感切换**到按需号池或自建网关线路。
 
