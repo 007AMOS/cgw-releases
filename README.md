@@ -1,4 +1,4 @@
-# CGW · Cursor Gateway  交流群 QQ：1092395668
+# CGW · Cursor Gateway
 
 CGW 是 Cursor 的本机网关客户端：**默认走你已登录的 Cursor 账号**，需要时可**无感切换**到按需号池或自建网关线路。
 
@@ -8,24 +8,27 @@ CGW 是 Cursor 的本机网关客户端：**默认走你已登录的 Cursor 账�
 
 ## 下载
 
-打开 **[最新 Release](https://github.com/007AMOS/cgw-releases/releases/latest)**，只需下载下面两项：
+打开 **[最新 Release](https://github.com/007AMOS/cgw-releases/releases/latest)**。插件和桌面端分开下，按下表选自己的系统。
 
-| | 文件 | 说明 |
-| --- | --- | --- |
-| **Cursor 插件** | [`cgw-agent.vsix`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-agent.vsix) | 装进 Cursor / VS Code，负责线路切换与用量查看 |
-| **桌面管理工具** | [`cgw-desktop-win32-x64.exe`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-win32-x64.exe) 等 | 安装插件与本机服务、管理账号与状态 |
+### Cursor 插件
 
-> 其他平台请在 Release 页选择对应的 `cgw-desktop-<平台>` 文件。  
-> **macOS** 为 `.app.zip`。
+全平台同一份，装进 Cursor / VS Code。
 
-### Linux 桌面端
+| 文件 | 说明 |
+| --- | --- |
+| [`cgw-agent.vsix`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-agent.vsix) | 在 Cursor 里选「从 VSIX 安装」；负责线路切换与用量查看 |
 
-首次安装请用**系统包**（会自动安装 GTK3 和 WebKit2GTK 4.1）。装好后在应用内更新即可，不必反复装包。
+### 桌面管理工具
 
-| 发行版 | 安装包 | 安装命令 |
-| --- | --- | --- |
-| Ubuntu / Debian | [`cgw-desktop-linux-x64.deb`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.deb) | `sudo apt install ./cgw-desktop-linux-x64.deb` |
-| Fedora / RHEL / Rocky | [`cgw-desktop-linux-x64.rpm`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.rpm) | `sudo dnf install ./cgw-desktop-linux-x64.rpm` |
+用来安装插件、查看本机服务状态、管理账号。不承载业务流量，关掉窗口后本机服务仍在后台转发。
+
+| 系统 | 文件 |
+| --- | --- |
+| Windows x64 | [`cgw-desktop-win32-x64.exe`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-win32-x64.exe) |
+| Linux · Ubuntu / Debian | [`cgw-desktop-linux-x64.deb`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.deb) |
+| Linux · Fedora / RHEL / Rocky | [`cgw-desktop-linux-x64.rpm`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.rpm) |
+
+macOS 桌面端暂缓提供。Linux 首次安装请用上面的 **`.deb` / `.rpm`**（会自动装 GTK3 和 WebKit2GTK 4.1）。装好后在应用内更新即可。
 
 也可以直接跑裸二进制 [`cgw-desktop-linux-x64`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64)。**它不会自动装依赖**，缺 GTK3 / WebKit 时窗口起不来：
 
@@ -54,14 +57,12 @@ sudo zypper install gtk3 webkit2gtk-4.1
 - **按需接网关**：只有要用按需号池、计费或远程转发时，才连到自建网关
 - **用量可见**：在插件侧栏或桌面工具里查看当前线路与消耗
 
-桌面管理工具**只负责安装、状态与账号**，不承载业务流量。关掉窗口后，本机服务仍在后台转发。
-
 ---
 
 ## 安装步骤
 
 1. 下载并安装 **Cursor 插件**（`.vsix`：在 Cursor 中选择「从 VSIX 安装」）
-2. 可选：下载 **桌面管理工具**，用于一键安装插件、查看本机服务状态
+2. 按自己的系统下载 **桌面管理工具**（可选，用于一键安装插件、查看本机服务状态）
 3. 打开 Cursor，插件会自动拉起本机服务；首次使用按提示选择线路即可
 
 ---
