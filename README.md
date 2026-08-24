@@ -25,10 +25,12 @@ CGW 是 Cursor 的本机网关客户端：**默认走你已登录的 Cursor 账�
 | 系统 | 文件 |
 | --- | --- |
 | Windows x64 | [`cgw-desktop-win32-x64.exe`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-win32-x64.exe) |
+| macOS · Apple 芯片 | [`cgw-desktop-darwin-arm64.app.zip`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-darwin-arm64.app.zip) |
+| macOS · Intel | [`cgw-desktop-darwin-x64.app.zip`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-darwin-x64.app.zip) |
 | Linux · Ubuntu / Debian | [`cgw-desktop-linux-x64.deb`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.deb) |
 | Linux · Fedora / RHEL / Rocky | [`cgw-desktop-linux-x64.rpm`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64.rpm) |
 
-macOS 桌面端暂缓提供。Linux 首次安装请用上面的 **`.deb` / `.rpm`**（会自动装 GTK3 和 WebKit2GTK 4.1）。装好后在应用内更新即可。
+Linux 首次安装请用上面的 **`.deb` / `.rpm`**（会自动装 GTK3 和 WebKit2GTK 4.1）。装好后在应用内更新即可。
 
 也可以直接跑裸二进制 [`cgw-desktop-linux-x64`](https://github.com/007AMOS/cgw-releases/releases/latest/download/cgw-desktop-linux-x64)。**它不会自动装依赖**，缺 GTK3 / WebKit 时窗口起不来：
 
@@ -45,6 +47,20 @@ sudo pacman -S gtk3 webkit2gtk-4.1
 # openSUSE
 sudo zypper install gtk3 webkit2gtk-4.1
 ```
+
+### macOS 首次打开
+
+解压后把 `cgw-desktop.app` 拖进「应用程序」。首次打开会被系统拦下，提示「无法打开，因为 Apple 无法检查其是否包含恶意软件」。**这是未做公证的正常提示，不是安装包损坏。**
+
+到 **系统设置 → 隐私与安全性**，往下找到「已阻止使用 cgw-desktop」，点**仍要打开**。也可以在终端里去掉隔离标记：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/cgw-desktop.app
+```
+
+macOS 15 以后右键选「打开」已经不能绕过了，网上很多旧教程还是这么写的，请用上面两种方式。
+
+---
 
 **本机服务无需手动下载** — 安装插件或打开桌面工具后会自动拉取并常驻本机，负责转发流量。
 
